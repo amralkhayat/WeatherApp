@@ -23,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         let mainScreenViewController = WeatherList()
         let rootView = UINavigationController(rootViewController: mainScreenViewController )
-        rootView.navigationBar.barTintColor = .darkGray
+        rootView.navigationBar.barTintColor = .darkText
+        rootView.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         rootView.navigationBar.tintColor = .white
         window?.rootViewController =  rootView
         window?.makeKeyAndVisible()
