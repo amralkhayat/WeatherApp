@@ -40,7 +40,12 @@ class WeatherList: UIViewController {
 
 
 extension WeatherList: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let secondViewController = WeatherDetails()
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+        
+        
+    }
 }
 
 extension WeatherList: UITableViewDataSource {

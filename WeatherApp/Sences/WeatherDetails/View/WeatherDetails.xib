@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,14 +16,109 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="fZ7-ht-mfd">
+                    <rect key="frame" x="124" y="85" width="160" height="160"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday,27th april" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="o2S-tG-gXz">
+                            <rect key="frame" x="0.0" y="0.0" width="160" height="22"/>
+                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="19"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:27 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mwM-G7-9w5">
+                            <rect key="frame" x="34.5" y="64" width="91" height="27"/>
+                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="23"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cairo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qCI-KW-Odx">
+                            <rect key="frame" x="53" y="133" width="54" height="27"/>
+                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="23"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="fPX-6L-DSn">
+                    <rect key="frame" x="155" y="501" width="108" height="100.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="clear sky" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IVq-zS-Q3p">
+                            <rect key="frame" x="0.0" y="0.0" width="108" height="24.5"/>
+                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="21"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 c" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ae4-hI-9Qj">
+                            <rect key="frame" x="0.0" y="35.5" width="108" height="65"/>
+                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="56"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather-app" translatesAutoresizingMaskIntoConstraints="NO" id="1JD-z3-5PF">
+                    <rect key="frame" x="137" y="278" width="154" height="185"/>
+                </imageView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="246" y="153"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="1JD-z3-5PF" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.485507" id="2rx-e7-q3Z">
+                    <variation key="heightClass=compact" constant="88"/>
+                </constraint>
+                <constraint firstItem="1JD-z3-5PF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="3Ts-sF-1Xc">
+                    <variation key="heightClass=compact" constant="6"/>
+                </constraint>
+                <constraint firstItem="fZ7-ht-mfd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-3" id="DFk-N1-0pf">
+                    <variation key="heightClass=compact" constant="243"/>
+                </constraint>
+                <constraint firstItem="1JD-z3-5PF" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.206473" id="FPK-aW-kr3"/>
+                <constraint firstItem="1JD-z3-5PF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="7" id="IbX-94-EWt"/>
+                <constraint firstItem="fPX-6L-DSn" firstAttribute="top" secondItem="fZ7-ht-mfd" secondAttribute="bottom" constant="52.5" id="InZ-0m-2Eg">
+                    <variation key="heightClass=compact" constant="30.5"/>
+                </constraint>
+                <constraint firstItem="fPX-6L-DSn" firstAttribute="top" secondItem="1JD-z3-5PF" secondAttribute="bottom" constant="38" id="KOp-56-wmx"/>
+                <constraint firstItem="1JD-z3-5PF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="93" id="Rra-Yf-1in">
+                    <variation key="heightClass=compact" constant="47"/>
+                </constraint>
+                <constraint firstItem="1JD-z3-5PF" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.245536" id="cRS-gi-rW3">
+                    <variation key="heightClass=compact" constant="204"/>
+                </constraint>
+                <constraint firstItem="fZ7-ht-mfd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="41" id="fhR-8l-rDg"/>
+                <constraint firstItem="1JD-z3-5PF" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.371981" id="oBH-p3-LHN"/>
+                <constraint firstItem="1JD-z3-5PF" firstAttribute="top" secondItem="fZ7-ht-mfd" secondAttribute="bottom" constant="33" id="pXM-AJ-FQn"/>
+                <constraint firstItem="fPX-6L-DSn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="2" id="r9W-Wd-7sQ">
+                    <variation key="heightClass=compact" constant="248"/>
+                </constraint>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="2rx-e7-q3Z"/>
+                    <exclude reference="3Ts-sF-1Xc"/>
+                    <exclude reference="Rra-Yf-1in"/>
+                    <exclude reference="cRS-gi-rW3"/>
+                    <exclude reference="InZ-0m-2Eg"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=compact">
+                <mask key="constraints">
+                    <include reference="2rx-e7-q3Z"/>
+                    <include reference="3Ts-sF-1Xc"/>
+                    <exclude reference="FPK-aW-kr3"/>
+                    <exclude reference="IbX-94-EWt"/>
+                    <include reference="Rra-Yf-1in"/>
+                    <include reference="cRS-gi-rW3"/>
+                    <exclude reference="oBH-p3-LHN"/>
+                    <exclude reference="pXM-AJ-FQn"/>
+                    <include reference="InZ-0m-2Eg"/>
+                    <exclude reference="KOp-56-wmx"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="243.08035714285714" y="150.72463768115944"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="weather-app" width="512" height="512"/>
     </resources>
 </document>
