@@ -23,11 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         let mainScreenViewController = WeatherList()
         let rootView = UINavigationController(rootViewController: mainScreenViewController )
-        rootView.navigationBar.barTintColor = .blue
+        rootView.navigationBar.barTintColor = .darkGray
         rootView.navigationBar.tintColor = .white
-        rootView.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        rootView.navigationBar.prefersLargeTitles = true
-        rootView.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         window?.rootViewController =  rootView
         window?.makeKeyAndVisible()
     }
