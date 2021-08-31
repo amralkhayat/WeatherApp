@@ -30,6 +30,7 @@ class WeatherList: UIViewController {
         super.viewDidLoad()
    
         navigationItem.title = "City"
+        
         }
     
     
