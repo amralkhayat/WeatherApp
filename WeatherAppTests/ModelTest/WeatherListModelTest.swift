@@ -10,8 +10,10 @@ class WeatherListModelTest: XCTestCase {
     
     
     var sut:  WeatherListModel?
-    //test parsing json with codable 
+    //test parsing json with codable
     func test_FeedsListModel_ShouldDecodeModel(){
+        //Given
+        let expectedData =  WeatherListModel.createWeatherList()
         
         decodingData(object: WeatherListModel.self, fileResourece: "WeatherListData") { respones in
             //When
@@ -27,6 +29,6 @@ class WeatherListModelTest: XCTestCase {
         // Then
     
         XCTAssertEqual(sut?.city?.name, WeatherListModel.createWeatherList().city?.name)
-        XCTAssertEqual(sut?.city?.id, WeatherListModel.createWeatherList().city?.id)
+        XCTAssertEqual(sut?.city?.id, expectedData.city?.id)
     }
 }
