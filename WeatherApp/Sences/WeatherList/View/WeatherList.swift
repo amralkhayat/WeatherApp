@@ -8,18 +8,7 @@
 import UIKit
 
 class WeatherList: UIViewController , WeatherListView{
-    func show(message: String) {
-        
-    }
-    
-    func reloadTableView() {
-        DispatchQueue.main.async { [weak self] in
-            self?.weatherListTableView.reloadData()
-        }
-    }
-    
-    
-    var configurator: WeatherListImplementation?
+
     var presenter:  WeatherListPresenterImplementation?
     //MARK:- IBOUTLETS
     @IBOutlet weak var weatherListTableView: UITableView!{
@@ -57,9 +46,8 @@ class WeatherList: UIViewController , WeatherListView{
 
 extension WeatherList: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let secondViewController = WeatherDetails()
-        self.navigationController?.pushViewController(secondViewController, animated: true)
         
+        presenter?.didSelect(row: indexPath.row)
         
     }
 }
@@ -77,6 +65,18 @@ extension WeatherList: UITableViewDataSource {
         let cell = tableView.dequeue() as WeatherItemCell
         presenter?.configurationWeatherItemCell(cell: cell, index: indexPath.row)
         return cell
+    }
+    
+    
+    
+    func show(message: String) {
+        
+    }
+    
+    func reloadTableView() {
+        DispatchQueue.main.async { [weak self] in
+            self?.weatherListTableView.reloadData()
+        }
     }
     
     

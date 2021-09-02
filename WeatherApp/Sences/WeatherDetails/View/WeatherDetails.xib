@@ -10,6 +10,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherDetails" customModule="WeatherApp" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weatherCity" destination="qCI-KW-Odx" id="9tR-G3-KML"/>
+                <outlet property="weatherDateLabel" destination="o2S-tG-gXz" id="yrA-24-wUV"/>
+                <outlet property="weatherDescription" destination="IVq-zS-Q3p" id="5Ba-mQ-GnZ"/>
+                <outlet property="weatherImage" destination="1JD-z3-5PF" id="9VN-uV-1Oo"/>
+                <outlet property="weatherTempLabel" destination="ae4-hI-9Qj" id="4uJ-Ff-TBO"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -18,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="fZ7-ht-mfd">
-                    <rect key="frame" x="124" y="85" width="160" height="160"/>
+                    <rect key="frame" x="124" y="85" width="160" height="91"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday,27th april" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="o2S-tG-gXz">
                             <rect key="frame" x="0.0" y="0.0" width="160" height="22"/>
@@ -26,14 +31,8 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:27 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mwM-G7-9w5">
-                            <rect key="frame" x="34.5" y="64" width="91" height="27"/>
-                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="23"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cairo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qCI-KW-Odx">
-                            <rect key="frame" x="53" y="133" width="54" height="27"/>
+                            <rect key="frame" x="53" y="64" width="54" height="27"/>
                             <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="23"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -41,7 +40,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="fPX-6L-DSn">
-                    <rect key="frame" x="155" y="501" width="108" height="100.5"/>
+                    <rect key="frame" x="155" y="432" width="108" height="100.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="clear sky" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IVq-zS-Q3p">
                             <rect key="frame" x="0.0" y="0.0" width="108" height="24.5"/>
@@ -58,7 +57,7 @@
                     </subviews>
                 </stackView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather-app" translatesAutoresizingMaskIntoConstraints="NO" id="1JD-z3-5PF">
-                    <rect key="frame" x="137" y="278" width="154" height="185"/>
+                    <rect key="frame" x="137" y="209" width="154" height="185"/>
                 </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

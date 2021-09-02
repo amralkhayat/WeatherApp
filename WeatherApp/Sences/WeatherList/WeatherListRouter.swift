@@ -5,11 +5,15 @@
 //  Created by Amr Saeed on 02/09/2021.
 //
 
-import Foundation
+import UIKit
+
 protocol WeatherListViewRouter {
-    func dismiss()
+    
+    func presentDetailsView(for Details: WeatherDetailsModel)
 }
+
 class WeatherListViewRouterImplementation: WeatherListViewRouter {
+   
     private weak var WeatherListViewController: WeatherList?
     
     init( WeatherListViewController: WeatherList) {
@@ -18,7 +22,13 @@ class WeatherListViewRouterImplementation: WeatherListViewRouter {
     
     // MARK: - WeatherListRouter
     
-    func dismiss() {
-//        addBookViewController?.dismiss(animated: true, completion: nil)
+    func presentDetailsView(for Details: WeatherDetailsModel) {
+        
+        let weatherDetails = WeatherDetails()
+        
+        weatherDetails.configurator = WeatherDetailsConfiguratorImplementation(weatherDetails: Details)
+    
+        WeatherListViewController?.navigationController?.pushViewController(weatherDetails, animated: true)
+        
     }
 }

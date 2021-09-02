@@ -7,23 +7,47 @@
 
 import UIKit
 
-class WeatherDetails: UIViewController {
+class WeatherDetails: UIViewController,WeatherDetailsView {
+   
+    
 
+    var presenter:  WeatherDetailsPresenterImplementation?
+    var configurator:  WeatherDetailsConfigurator?
+    
+    //MARK:- IBOUTLETS
+    
+    @IBOutlet weak var weatherDateLabel: UILabel!
+    
+    @IBOutlet weak var weatherCity: UILabel!
+    
+    @IBOutlet weak var weatherImage: UIImageView!
+    
+    @IBOutlet weak var weatherDescription: UILabel!
+    
+    @IBOutlet weak var weatherTempLabel: UILabel!
+    
+    //MARK:- Properities
+   
+    
+    //MARK:- Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        configurationUI()
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+   //MARK:- Helper
+    private func configurationUI(){
+        configurator?.configure(WeatherDetailsViewController: self)
+        presenter?.viewDidLoad()
     }
-    */
+    
+    
+    func displayWeatherDetails(details: WeatherDetailsModel) {
+        weatherDateLabel.text = "\(details.date.timeStampToDateConverter() ?? "" )"
+        weatherCity.text = details.city
+        weatherDescription.text = details.main
+        weatherTempLabel.text = "\(details.temp)"
+    }
 
 }
