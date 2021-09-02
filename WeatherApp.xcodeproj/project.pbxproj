@@ -23,6 +23,8 @@
 		DD801AC526E0AB33009B5DB0 /* LocalPersistenceWeatherGetwayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AC426E0AB33009B5DB0 /* LocalPersistenceWeatherGetwayTest.swift */; };
 		DD801AC726E0AB4B009B5DB0 /* LocalPersistenceWeatherGetway.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AC626E0AB4B009B5DB0 /* LocalPersistenceWeatherGetway.swift */; };
 		DD801ACA26E0AB8B009B5DB0 /* WeatherGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AC926E0AB8B009B5DB0 /* WeatherGateway.swift */; };
+		DD801ACC26E0AD59009B5DB0 /* RealmPersistenceWeatherGatewaySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801ACB26E0AD59009B5DB0 /* RealmPersistenceWeatherGatewaySpy.swift */; };
+		DD801ACE26E0AF9E009B5DB0 /* CreateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801ACD26E0AF9E009B5DB0 /* CreateError.swift */; };
 		DDDE9FF226DE86410018D59A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE9FF126DE86410018D59A /* AppDelegate.swift */; };
 		DDDE9FFB26DE86430018D59A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDDE9FFA26DE86430018D59A /* Assets.xcassets */; };
 		DDDE9FFE26DE86430018D59A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDE9FFC26DE86430018D59A /* LaunchScreen.storyboard */; };
@@ -66,6 +68,8 @@
 		DD801AC426E0AB33009B5DB0 /* LocalPersistenceWeatherGetwayTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPersistenceWeatherGetwayTest.swift; sourceTree = "<group>"; };
 		DD801AC626E0AB4B009B5DB0 /* LocalPersistenceWeatherGetway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPersistenceWeatherGetway.swift; sourceTree = "<group>"; };
 		DD801AC926E0AB8B009B5DB0 /* WeatherGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherGateway.swift; sourceTree = "<group>"; };
+		DD801ACB26E0AD59009B5DB0 /* RealmPersistenceWeatherGatewaySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPersistenceWeatherGatewaySpy.swift; sourceTree = "<group>"; };
+		DD801ACD26E0AF9E009B5DB0 /* CreateError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateError.swift; sourceTree = "<group>"; };
 		DDDE9FEE26DE86410018D59A /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDDE9FF126DE86410018D59A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDDE9FFA26DE86430018D59A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				DD801AC426E0AB33009B5DB0 /* LocalPersistenceWeatherGetwayTest.swift */,
+				DD801ACB26E0AD59009B5DB0 /* RealmPersistenceWeatherGatewaySpy.swift */,
 			);
 			path = LocalPersistenceLayerTest;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				DD801ABF26E0A617009B5DB0 /* DecodingData.swift */,
+				DD801ACD26E0AF9E009B5DB0 /* CreateError.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -580,6 +586,8 @@
 				DD801AC026E0A617009B5DB0 /* DecodingData.swift in Sources */,
 				DD801ABD26E0A50C009B5DB0 /* WeatherListModelTest.swift in Sources */,
 				DD801AC326E0A71D009B5DB0 /* WeatherListModel.swift in Sources */,
+				DD801ACC26E0AD59009B5DB0 /* RealmPersistenceWeatherGatewaySpy.swift in Sources */,
+				DD801ACE26E0AF9E009B5DB0 /* CreateError.swift in Sources */,
 				DD801AC526E0AB33009B5DB0 /* LocalPersistenceWeatherGetwayTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
