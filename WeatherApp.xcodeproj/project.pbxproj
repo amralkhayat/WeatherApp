@@ -27,6 +27,7 @@
 		DD801ACE26E0AF9E009B5DB0 /* CreateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801ACD26E0AF9E009B5DB0 /* CreateError.swift */; };
 		DD801AD026E0B15C009B5DB0 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801ACF26E0B15C009B5DB0 /* MockURLSession.swift */; };
 		DD801AD226E0B1B1009B5DB0 /* NetworkTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AD126E0B1B1009B5DB0 /* NetworkTestHelper.swift */; };
+		DD801AD426E0B1F9009B5DB0 /* APIManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AD326E0B1F9009B5DB0 /* APIManagerTest.swift */; };
 		DDDE9FF226DE86410018D59A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE9FF126DE86410018D59A /* AppDelegate.swift */; };
 		DDDE9FFB26DE86430018D59A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDDE9FFA26DE86430018D59A /* Assets.xcassets */; };
 		DDDE9FFE26DE86430018D59A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDE9FFC26DE86430018D59A /* LaunchScreen.storyboard */; };
@@ -74,6 +75,7 @@
 		DD801ACD26E0AF9E009B5DB0 /* CreateError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateError.swift; sourceTree = "<group>"; };
 		DD801ACF26E0B15C009B5DB0 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		DD801AD126E0B1B1009B5DB0 /* NetworkTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestHelper.swift; sourceTree = "<group>"; };
+		DD801AD326E0B1F9009B5DB0 /* APIManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTest.swift; sourceTree = "<group>"; };
 		DDDE9FEE26DE86410018D59A /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDDE9FF126DE86410018D59A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDDE9FFA26DE86430018D59A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				DD801ACF26E0B15C009B5DB0 /* MockURLSession.swift */,
 				DD801AD126E0B1B1009B5DB0 /* NetworkTestHelper.swift */,
+				DD801AD326E0B1F9009B5DB0 /* APIManagerTest.swift */,
 			);
 			path = NetworkLayerTest;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				DD801AD026E0B15C009B5DB0 /* MockURLSession.swift in Sources */,
 				DD801ACE26E0AF9E009B5DB0 /* CreateError.swift in Sources */,
 				DD801AC526E0AB33009B5DB0 /* LocalPersistenceWeatherGetwayTest.swift in Sources */,
+				DD801AD426E0B1F9009B5DB0 /* APIManagerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,7 +23,7 @@ extension WeatherListModel {
         
         weathers.append(weather)
         
-       let weahterList = weatherList(dt: 1630530000, main: main, weather: weathers)
+       let weahterList = weatherList(dt: 1630530000, main:  main, weather: weathers)
         
       let wl = List<weatherList>()
         
