@@ -24,7 +24,7 @@ import RealmSwift
     public required convenience init(from decoder: Decoder) throws {
         self.init()
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.city = try container.decode(City.self, forKey: .city)
+        self.city = try? container.decode(City.self, forKey: .city)
         let lists = try container.decodeIfPresent([weatherList].self, forKey: .list) ?? [weatherList()]
         self.list.append(objectsIn: lists)
     }
@@ -54,7 +54,7 @@ import RealmSwift
         self.init()
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(Int.self, forKey: .id)
-        self.name = try container.decode(String.self, forKey: .name)
+        self.name = try? container.decode(String.self, forKey: .name)
     }
     
     
@@ -88,7 +88,7 @@ import RealmSwift
         self.init()
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.dt = try container.decode(Int.self, forKey: .dt)
-        self.main = try container.decode(Main.self, forKey: .main)
+        self.main = try? container.decode(Main.self, forKey: .main)
         let weathers = try container.decodeIfPresent([Weather].self, forKey: .weather) ?? [Weather()]
         self.weather.append(objectsIn: weathers)
     }
@@ -102,10 +102,10 @@ import RealmSwift
     dynamic var tempMin: Double = 0.0
     dynamic var tempMax: Double = 0.0
     dynamic var humidity : Int = 0
-    
+    dynamic var id = ""
 
     override static func primaryKey() -> String? {
-        return "temp"
+        return "id"
     }
     
     convenience  init(temp: Double,feelsLike: Double ,tempMin: Double,
@@ -165,9 +165,9 @@ import RealmSwift
         self.init()
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(Int.self, forKey: .id)
-        self.descr = try container.decode(String.self, forKey: .descr)
-        self.icon = try container.decode(String.self, forKey: .icon)
-        self.main = try container.decode(String.self, forKey: .main)
+        self.descr = try? container.decode(String.self, forKey: .descr)
+        self.icon = try? container.decode(String.self, forKey: .icon)
+        self.main = try? container.decode(String.self, forKey: .main)
     }
 }
 

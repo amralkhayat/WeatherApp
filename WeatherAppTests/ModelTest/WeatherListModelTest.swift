@@ -8,12 +8,14 @@ import XCTest
 @testable import WeatherApp
 class WeatherListModelTest: XCTestCase {
     
-    var sut:  WeatherListModel?
     
+    var sut:  WeatherListModel?
+    //test parsing json with codable 
     func test_FeedsListModel_ShouldDecodeModel(){
         
         decodingData(object: WeatherListModel.self, fileResourece: "WeatherListData") { respones in
             //When
+            
             switch respones{
             case .success(let data):
                 self.sut =  data
@@ -21,9 +23,10 @@ class WeatherListModelTest: XCTestCase {
                 break
             }
         }
-        // Then
-     
         
-        XCTAssertEqual(sut?.tiles[0].headline, FeedsListModel.createTestTile().tiles[0].headline)
+        // Then
+    
+        XCTAssertEqual(sut?.city?.name, WeatherListModel.createWeatherList().city?.name)
+        XCTAssertEqual(sut?.city?.id, WeatherListModel.createWeatherList().city?.id)
     }
 }
