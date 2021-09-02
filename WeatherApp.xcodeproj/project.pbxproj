@@ -25,6 +25,7 @@
 		DD801ACA26E0AB8B009B5DB0 /* WeatherGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AC926E0AB8B009B5DB0 /* WeatherGateway.swift */; };
 		DD801ACC26E0AD59009B5DB0 /* RealmPersistenceWeatherGatewaySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801ACB26E0AD59009B5DB0 /* RealmPersistenceWeatherGatewaySpy.swift */; };
 		DD801ACE26E0AF9E009B5DB0 /* CreateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801ACD26E0AF9E009B5DB0 /* CreateError.swift */; };
+		DD801AD026E0B15C009B5DB0 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801ACF26E0B15C009B5DB0 /* MockURLSession.swift */; };
 		DDDE9FF226DE86410018D59A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE9FF126DE86410018D59A /* AppDelegate.swift */; };
 		DDDE9FFB26DE86430018D59A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDDE9FFA26DE86430018D59A /* Assets.xcassets */; };
 		DDDE9FFE26DE86430018D59A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDE9FFC26DE86430018D59A /* LaunchScreen.storyboard */; };
@@ -70,6 +71,7 @@
 		DD801AC926E0AB8B009B5DB0 /* WeatherGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherGateway.swift; sourceTree = "<group>"; };
 		DD801ACB26E0AD59009B5DB0 /* RealmPersistenceWeatherGatewaySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPersistenceWeatherGatewaySpy.swift; sourceTree = "<group>"; };
 		DD801ACD26E0AF9E009B5DB0 /* CreateError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateError.swift; sourceTree = "<group>"; };
+		DD801ACF26E0B15C009B5DB0 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		DDDE9FEE26DE86410018D59A /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDDE9FF126DE86410018D59A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDDE9FFA26DE86430018D59A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 		DD801AA526E01DE0009B5DB0 /* NetworkLayerTest */ = {
 			isa = PBXGroup;
 			children = (
+				DD801ACF26E0B15C009B5DB0 /* MockURLSession.swift */,
 			);
 			path = NetworkLayerTest;
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 				DD801ABD26E0A50C009B5DB0 /* WeatherListModelTest.swift in Sources */,
 				DD801AC326E0A71D009B5DB0 /* WeatherListModel.swift in Sources */,
 				DD801ACC26E0AD59009B5DB0 /* RealmPersistenceWeatherGatewaySpy.swift in Sources */,
+				DD801AD026E0B15C009B5DB0 /* MockURLSession.swift in Sources */,
 				DD801ACE26E0AF9E009B5DB0 /* CreateError.swift in Sources */,
 				DD801AC526E0AB33009B5DB0 /* LocalPersistenceWeatherGetwayTest.swift in Sources */,
 			);
