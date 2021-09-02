@@ -1,0 +1,28 @@
+
+{
+    "list": [
+        {
+            "dt": 1630530000,
+            "main": {
+                "temp": 300.57,
+                "feels_like": 301.87,
+                "temp_min": 299.79,
+                "temp_max": 300.57,
+                "humidity": 61
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01n"
+                }
+            ]
+        }
+    ],
+    "city": {
+        "id": 360630,
+        "name": "Cairo"
+ 
+    }
+}
