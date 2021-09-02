@@ -39,6 +39,7 @@ class CacheWeatherGetway: WeatherGateway  {
         switch result {
         
         case let .success(Weather):
+            print(Weather)
        
             handlingSuccessSavetoRelam(Weather: Weather, completionHandler: completionHandler)
             

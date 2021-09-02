@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		909476806233E3DFC2EBBA69 /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9364D655AD3A53DED562F0D0 /* Pods_WeatherApp.framework */; };
 		C8A4813C1EACE3BDC2B99CC5 /* Pods_WeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5619EC3F045DEA257A1100CF /* Pods_WeatherAppTests.framework */; };
+		DD5A789F26E1338100D40089 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5A789E26E1338100D40089 /* Int+Extension.swift */; };
+		DD5A78A226E137AC00D40089 /* timeStampToDateConverter .swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5A78A126E137AB00D40089 /* timeStampToDateConverter .swift */; };
 		DD801AA926E01E4A009B5DB0 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AA826E01E4A009B5DB0 /* RealmManager.swift */; };
 		DD801AAB26E01E6D009B5DB0 /* RealmError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AAA26E01E6D009B5DB0 /* RealmError.swift */; };
 		DD801AAF26E01EFD009B5DB0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AAE26E01EFD009B5DB0 /* APIManager.swift */; };
@@ -34,6 +36,10 @@
 		DD801ADD26E0BF78009B5DB0 /* CacheWeatherGetwayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801ADC26E0BF78009B5DB0 /* CacheWeatherGetwayTest.swift */; };
 		DD801ADF26E0BFBA009B5DB0 /* APIWeatherGatewaySpy..swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801ADE26E0BFBA009B5DB0 /* APIWeatherGatewaySpy..swift */; };
 		DD801AE126E0BFC9009B5DB0 /* LocalPersistenceGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AE026E0BFC9009B5DB0 /* LocalPersistenceGateway.swift */; };
+		DD801AE326E0CA4E009B5DB0 /* WeatherListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AE226E0CA4E009B5DB0 /* WeatherListConfigurator.swift */; };
+		DD801AE526E0CB20009B5DB0 /* WeatherListPersenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AE426E0CB20009B5DB0 /* WeatherListPersenter.swift */; };
+		DD801AE726E0CBFA009B5DB0 /* WeatherListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AE626E0CBFA009B5DB0 /* WeatherListUseCase.swift */; };
+		DD801AE926E0CD2F009B5DB0 /* WeatherListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AE826E0CD2F009B5DB0 /* WeatherListRouter.swift */; };
 		DDDE9FF226DE86410018D59A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE9FF126DE86410018D59A /* AppDelegate.swift */; };
 		DDDE9FFB26DE86430018D59A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDDE9FFA26DE86430018D59A /* Assets.xcassets */; };
 		DDDE9FFE26DE86430018D59A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDE9FFC26DE86430018D59A /* LaunchScreen.storyboard */; };
@@ -63,6 +69,8 @@
 		5619EC3F045DEA257A1100CF /* Pods_WeatherAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9364D655AD3A53DED562F0D0 /* Pods_WeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD3AA44C7D7CBE418A11055 /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
+		DD5A789E26E1338100D40089 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		DD5A78A126E137AB00D40089 /* timeStampToDateConverter .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "timeStampToDateConverter .swift"; sourceTree = "<group>"; };
 		DD801AA826E01E4A009B5DB0 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		DD801AAA26E01E6D009B5DB0 /* RealmError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmError.swift; sourceTree = "<group>"; };
 		DD801AAE26E01EFD009B5DB0 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -88,6 +96,10 @@
 		DD801ADC26E0BF78009B5DB0 /* CacheWeatherGetwayTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheWeatherGetwayTest.swift; sourceTree = "<group>"; };
 		DD801ADE26E0BFBA009B5DB0 /* APIWeatherGatewaySpy..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWeatherGatewaySpy..swift; sourceTree = "<group>"; };
 		DD801AE026E0BFC9009B5DB0 /* LocalPersistenceGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPersistenceGateway.swift; sourceTree = "<group>"; };
+		DD801AE226E0CA4E009B5DB0 /* WeatherListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListConfigurator.swift; sourceTree = "<group>"; };
+		DD801AE426E0CB20009B5DB0 /* WeatherListPersenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListPersenter.swift; sourceTree = "<group>"; };
+		DD801AE626E0CBFA009B5DB0 /* WeatherListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListUseCase.swift; sourceTree = "<group>"; };
+		DD801AE826E0CD2F009B5DB0 /* WeatherListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListRouter.swift; sourceTree = "<group>"; };
 		DDDE9FEE26DE86410018D59A /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDDE9FF126DE86410018D59A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDDE9FFA26DE86430018D59A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -144,6 +156,14 @@
 				EEE3581B76418E89C15BFDA8 /* Pods-WeatherAppTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DD5A78A026E1378E00D40089 /* ExtensionTest */ = {
+			isa = PBXGroup;
+			children = (
+				DD5A78A126E137AB00D40089 /* timeStampToDateConverter .swift */,
+			);
+			path = ExtensionTest;
 			sourceTree = "<group>";
 		};
 		DD801AA026E01D80009B5DB0 /* Gateway */ = {
@@ -329,6 +349,7 @@
 		DDDEA00726DE86440018D59A /* WeatherAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				DD5A78A026E1378E00D40089 /* ExtensionTest */,
 				DD801AC126E0A6DB009B5DB0 /* Creators */,
 				DD801ABE26E0A584009B5DB0 /* Helper */,
 				DD801ABB26E0A4F3009B5DB0 /* ModelTest */,
@@ -377,6 +398,10 @@
 			isa = PBXGroup;
 			children = (
 				DDDEA02726DE8B5D0018D59A /* View */,
+				DD801AE226E0CA4E009B5DB0 /* WeatherListConfigurator.swift */,
+				DD801AE426E0CB20009B5DB0 /* WeatherListPersenter.swift */,
+				DD801AE826E0CD2F009B5DB0 /* WeatherListRouter.swift */,
+				DD801AE626E0CBFA009B5DB0 /* WeatherListUseCase.swift */,
 			);
 			path = WeatherList;
 			sourceTree = "<group>";
@@ -422,6 +447,7 @@
 			children = (
 				DDDEA03B26DE8D3C0018D59A /* UIView+Extension.swift */,
 				DDDEA03D26DE8FC50018D59A /* TableView+Extension.swift */,
+				DD5A789E26E1338100D40089 /* Int+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -597,7 +623,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDDEA03326DE8C790018D59A /* WeatherDetails.swift in Sources */,
+				DD801AE726E0CBFA009B5DB0 /* WeatherListUseCase.swift in Sources */,
+				DD801AE526E0CB20009B5DB0 /* WeatherListPersenter.swift in Sources */,
+				DD801AE326E0CA4E009B5DB0 /* WeatherListConfigurator.swift in Sources */,
 				DDDEA03E26DE8FC50018D59A /* TableView+Extension.swift in Sources */,
+				DD801AE926E0CD2F009B5DB0 /* WeatherListRouter.swift in Sources */,
 				DDDE9FF226DE86410018D59A /* AppDelegate.swift in Sources */,
 				DD801AC726E0AB4B009B5DB0 /* LocalPersistenceWeatherGetway.swift in Sources */,
 				DD801AAF26E01EFD009B5DB0 /* APIManager.swift in Sources */,
@@ -607,6 +637,7 @@
 				DDDEA03C26DE8D3C0018D59A /* UIView+Extension.swift in Sources */,
 				DD801AA926E01E4A009B5DB0 /* RealmManager.swift in Sources */,
 				DD801AB326E01F4D009B5DB0 /* NetworkConstant.swift in Sources */,
+				DD5A789F26E1338100D40089 /* Int+Extension.swift in Sources */,
 				DD801AB126E01F2B009B5DB0 /* NetworkErrors.swift in Sources */,
 				DD801AAB26E01E6D009B5DB0 /* RealmError.swift in Sources */,
 				DD801AB826E02074009B5DB0 /* WeatherListModel.swift in Sources */,
@@ -622,6 +653,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD801AC026E0A617009B5DB0 /* DecodingData.swift in Sources */,
+				DD5A78A226E137AC00D40089 /* timeStampToDateConverter .swift in Sources */,
 				DD801ABD26E0A50C009B5DB0 /* WeatherListModelTest.swift in Sources */,
 				DD801AE126E0BFC9009B5DB0 /* LocalPersistenceGateway.swift in Sources */,
 				DD801AC326E0A71D009B5DB0 /* WeatherListModel.swift in Sources */,

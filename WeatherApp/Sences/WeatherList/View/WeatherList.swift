@@ -7,7 +7,20 @@
 
 import UIKit
 
-class WeatherList: UIViewController {
+class WeatherList: UIViewController , WeatherListView{
+    func show(message: String) {
+        
+    }
+    
+    func reloadTableView() {
+        DispatchQueue.main.async { [weak self] in
+            self?.weatherListTableView.reloadData()
+        }
+    }
+    
+    
+    var configurator: WeatherListImplementation?
+    var presenter:  WeatherListPresenterImplementation?
     //MARK:- IBOUTLETS
     @IBOutlet weak var weatherListTableView: UITableView!{
         
@@ -25,12 +38,15 @@ class WeatherList: UIViewController {
         
     }
     //MARK:- Properties
+   
     //MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
    
         navigationItem.title = "City"
-        
+ 
+        WeatherListImplementation.configure(WeatherListViewController: self)
+        presenter?.viewDidLoad()
         }
     
     
@@ -52,12 +68,15 @@ extension WeatherList: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        5
+        presenter?.numberOfCell() ?? 0
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return  tableView.dequeue() as WeatherItemCell
+        let cell = tableView.dequeue() as WeatherItemCell
+        presenter?.configurationWeatherItemCell(cell: cell, index: indexPath.row)
+        return cell
     }
     
     

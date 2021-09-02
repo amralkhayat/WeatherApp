@@ -47,7 +47,7 @@ struct APIManager: APIClient {
        let datatask =  sessionManager.dataTask(with: router.urlRequest) {  (data, response, error) in
            
             // Throw error if there is any http respones
-           
+  
            guard let UrlResponse = response as? HTTPURLResponse else {
                
                  DispatchQueue.main.async {
@@ -67,9 +67,9 @@ struct APIManager: APIClient {
                do {
                    
                    let data = try JSONDecoder().decode(T.self, from: data!)
-                   
+           
                        DispatchQueue.main.async {
-                           
+                    
                          responseHandler(.success(data))
                            
                        }

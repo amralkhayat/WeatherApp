@@ -96,13 +96,13 @@ import RealmSwift
 }
 
 
-@objcMembers class Main: Object, Codable {
-    dynamic var temp: Double = 0.0
-    dynamic var feelsLike: Double = 0.0
-    dynamic var tempMin: Double = 0.0
-    dynamic var tempMax: Double = 0.0
-    dynamic var humidity : Int = 0
-    dynamic var id = ""
+class Main: Object, Codable {
+    @objc dynamic var temp: Double = 0.0
+    @objc  dynamic var feelsLike: Double = 0.0
+    @objc  dynamic var tempMin: Double = 0.0
+    @objc  dynamic var tempMax: Double = 0.0
+    @objc  dynamic var humidity : Int = 0
+    @objc  dynamic var id = ""
 
     override static func primaryKey() -> String? {
         return "id"
@@ -127,7 +127,7 @@ import RealmSwift
         self.tempMin = try container.decode(Double.self, forKey: .tempMin)
         self.tempMax  = try container.decode(Double.self, forKey: .tempMax )
         self.humidity = try container.decode(Int.self, forKey: .humidity)
-       
+
     }
     
     
@@ -172,37 +172,3 @@ import RealmSwift
 }
 
 
-
-//// MARK: - TestTileModel
-//struct TestTileModel: Codable {
-//    let list: [List]
-//    let city: City
-//}
-//
-//// MARK: - City
-//struct City: Codable {
-//    let id: Int
-//    let name: String
-//}
-//
-//// MARK: - List
-//struct List: Codable {
-//    let dt: Int
-//    let main: Main
-//    let weather: [Weather]
-//}
-//
-//// MARK: - Main
-//struct Main: Codable {
-//    let temp, feelsLike, tempMin, tempMax: Double
-//    let humidity: Int
-//
-//    enum CodingKeys: String, CodingKey {
-//        case temp
-//        case feelsLike
-//        case tempMin
-//        case tempMax
-//        case humidity
-//    }
-//}
-//

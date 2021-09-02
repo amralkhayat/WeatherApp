@@ -51,6 +51,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="WeahterDateLabel" destination="SIZ-SK-Eb5" id="Xf2-cd-HKq"/>
+                <outlet property="weatherDayLabe" destination="B4s-Zo-LBD" id="AEQ-bM-KdN"/>
+                <outlet property="weatherTempLabel" destination="ccQ-Yk-PcB" id="dTj-pq-9vx"/>
+            </connections>
             <point key="canvasLocation" x="100.72463768115942" y="35.825892857142854"/>
         </tableViewCell>
     </objects>

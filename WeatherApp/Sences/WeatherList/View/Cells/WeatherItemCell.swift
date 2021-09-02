@@ -9,16 +9,25 @@ import UIKit
 
 class WeatherItemCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-       
-    }
+    @IBOutlet weak var weatherDayLabe: UILabel!
+    
+    @IBOutlet weak var WeahterDateLabel: UILabel!
+    
+    @IBOutlet weak var weatherTempLabel: UILabel!
+    
+}
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+extension WeatherItemCell:  WeatherItemCellView {
+    
+    func displayCellBody(list: weatherList) {
+      
+        weatherDayLabe.text = "\(list.dt.timeStampToDateConverter()?.prefix(8) ?? "")"
+        
+        WeahterDateLabel.text = "\(list.dt.timeStampToDateConverter()?.suffix(9) ?? "")"
+        
+        weatherTempLabel.text =  "\( list.main?.temp ?? 0.0)"
+        
     }
+    
     
 }

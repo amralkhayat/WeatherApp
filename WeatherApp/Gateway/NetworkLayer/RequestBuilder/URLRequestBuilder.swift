@@ -15,25 +15,28 @@ protocol UrlRequestBuilder : ApiRequest{
     var parameters: [String: Any]? { get }
    // MARK: - Main and Request URLS
    var mainURL: URL { get }
-  
-   var requestURL: URL { get }
+
 }
 
 extension UrlRequestBuilder {
 
   var mainURL: URL {
-         return URL(string: "https://firebasestorage.googleapis.com/")!
+         return URL(string: "https://api.openweathermap.org/")!
     
       }
   
-     var requestURL: URL {
-        return mainURL.appendingPathComponent(path)
-    }
+  
 
   
+    
+   
   var urlRequest: URLRequest {
-    var request = URLRequest(url: requestURL)
+    
+    let stringUrl =  mainURL.appendingPathComponent(path).absoluteString.removingPercentEncoding!
+    guard let url = URL(string: stringUrl ) else  {return urlRequest}
+    var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
+
        return request
    }
     

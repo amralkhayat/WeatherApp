@@ -9,6 +9,15 @@ import Foundation
 @testable import WeatherApp
 
 class LocalPersistenceGatewaySpy: LocalPersistenceMethods {
+    
+    var fetchWeatheResultToBeReturned: Result<WeatherListModel, Error>!
+    var fetchWeatherIsCalled = false
+
+    func fetchWeather(completionHandler: @escaping WeatherGatewayCompletionHandler<WeatherListModel>) {
+        fetchWeatherIsCalled = true
+        completionHandler(fetchWeatheResultToBeReturned)
+    }
+    
     func addWeather(object: WeatherListModel, completionHandler: @escaping WeatherGatewayCompletionHandler<Any>) {
         
     }
@@ -17,9 +26,7 @@ class LocalPersistenceGatewaySpy: LocalPersistenceMethods {
         
     }
     
-    func fetchWeather(completionHandler: @escaping WeatherGatewayCompletionHandler<WeatherListModel>) {
-        
-    }
+   
     
    
     
