@@ -31,6 +31,9 @@
 		DD801AD726E0B974009B5DB0 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AD626E0B974009B5DB0 /* WeatherAPI.swift */; };
 		DD801AD926E0BA6E009B5DB0 /* APIWeahterGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AD826E0BA6E009B5DB0 /* APIWeahterGateway.swift */; };
 		DD801ADB26E0BC8F009B5DB0 /* CacheWeatherGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801ADA26E0BC8F009B5DB0 /* CacheWeatherGateway.swift */; };
+		DD801ADD26E0BF78009B5DB0 /* CacheWeatherGetwayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801ADC26E0BF78009B5DB0 /* CacheWeatherGetwayTest.swift */; };
+		DD801ADF26E0BFBA009B5DB0 /* APIWeatherGatewaySpy..swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801ADE26E0BFBA009B5DB0 /* APIWeatherGatewaySpy..swift */; };
+		DD801AE126E0BFC9009B5DB0 /* LocalPersistenceGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AE026E0BFC9009B5DB0 /* LocalPersistenceGateway.swift */; };
 		DDDE9FF226DE86410018D59A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE9FF126DE86410018D59A /* AppDelegate.swift */; };
 		DDDE9FFB26DE86430018D59A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDDE9FFA26DE86430018D59A /* Assets.xcassets */; };
 		DDDE9FFE26DE86430018D59A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDE9FFC26DE86430018D59A /* LaunchScreen.storyboard */; };
@@ -82,6 +85,9 @@
 		DD801AD626E0B974009B5DB0 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		DD801AD826E0BA6E009B5DB0 /* APIWeahterGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWeahterGateway.swift; sourceTree = "<group>"; };
 		DD801ADA26E0BC8F009B5DB0 /* CacheWeatherGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheWeatherGateway.swift; sourceTree = "<group>"; };
+		DD801ADC26E0BF78009B5DB0 /* CacheWeatherGetwayTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheWeatherGetwayTest.swift; sourceTree = "<group>"; };
+		DD801ADE26E0BFBA009B5DB0 /* APIWeatherGatewaySpy..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWeatherGatewaySpy..swift; sourceTree = "<group>"; };
+		DD801AE026E0BFC9009B5DB0 /* LocalPersistenceGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPersistenceGateway.swift; sourceTree = "<group>"; };
 		DDDE9FEE26DE86410018D59A /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDDE9FF126DE86410018D59A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDDE9FFA26DE86430018D59A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -201,6 +207,9 @@
 		DD801AA626E01DEF009B5DB0 /* CasheTest */ = {
 			isa = PBXGroup;
 			children = (
+				DD801ADC26E0BF78009B5DB0 /* CacheWeatherGetwayTest.swift */,
+				DD801ADE26E0BFBA009B5DB0 /* APIWeatherGatewaySpy..swift */,
+				DD801AE026E0BFC9009B5DB0 /* LocalPersistenceGateway.swift */,
 			);
 			path = CasheTest;
 			sourceTree = "<group>";
@@ -614,6 +623,7 @@
 			files = (
 				DD801AC026E0A617009B5DB0 /* DecodingData.swift in Sources */,
 				DD801ABD26E0A50C009B5DB0 /* WeatherListModelTest.swift in Sources */,
+				DD801AE126E0BFC9009B5DB0 /* LocalPersistenceGateway.swift in Sources */,
 				DD801AC326E0A71D009B5DB0 /* WeatherListModel.swift in Sources */,
 				DD801ACC26E0AD59009B5DB0 /* RealmPersistenceWeatherGatewaySpy.swift in Sources */,
 				DD801AD226E0B1B1009B5DB0 /* NetworkTestHelper.swift in Sources */,
@@ -621,6 +631,8 @@
 				DD801ACE26E0AF9E009B5DB0 /* CreateError.swift in Sources */,
 				DD801AC526E0AB33009B5DB0 /* LocalPersistenceWeatherGetwayTest.swift in Sources */,
 				DD801AD426E0B1F9009B5DB0 /* APIManagerTest.swift in Sources */,
+				DD801ADF26E0BFBA009B5DB0 /* APIWeatherGatewaySpy..swift in Sources */,
+				DD801ADD26E0BF78009B5DB0 /* CacheWeatherGetwayTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

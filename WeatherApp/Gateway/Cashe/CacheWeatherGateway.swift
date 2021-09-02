@@ -45,7 +45,7 @@ class CacheWeatherGetway: WeatherGateway  {
         case .failure(_):
             
             localPersistenceWeatherGateway.fetchWeather(completionHandler: completionHandler)
-        }
+          }
         }
     
 
@@ -60,11 +60,11 @@ class CacheWeatherGetway: WeatherGateway  {
                 
             case .failure(_):
                 self.localPersistenceWeatherGateway.fetchWeather(completionHandler: completionHandler)
-            }
+              }
             
           }
         
        }
     
-      }
+    }
     
