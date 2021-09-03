@@ -15,7 +15,7 @@ Weather app populate 16 weather situations with different time , and notify with
 
 * Clean Code
 
-* Unit Testing(with test covrage 61.2 %)
+* Unit Testing(with test covrage 62.4 %)
 
 * Realm
 
