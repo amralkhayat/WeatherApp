@@ -41,8 +41,8 @@ extension WeatherList: WeatherListView {
     
     
     func randomDescriptiom(desc: String) {
-        body =  desc
-
+     
+        scheuleNotifications(title: "Weather App", body: desc)
     }
     
 }
