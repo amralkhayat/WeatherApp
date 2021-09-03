@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WeatherList: UIViewController , WeatherListView{
+class WeatherList: UIViewController {
 
     var presenter:  WeatherListPresenterImplementation?
     //MARK:- IBOUTLETS
@@ -27,23 +27,39 @@ class WeatherList: UIViewController , WeatherListView{
         
     }
     //MARK:- Properties
-   
+    var tempConverter =  UIBarButtonItem()
     //MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
    
-        navigationItem.title = "City"
+        addNavigationItem()
  
         WeatherListImplementation.configure(WeatherListViewController: self)
         presenter?.viewDidLoad()
+        
         }
     
     
     //MARK:- Helper
+    private func addNavigationItem(){
+        tempConverter =  UIBarButtonItem(title: "Fahrenheit", style: .plain, target: self, action: #selector(changeTemp(button:)))
 
+        navigationItem.title = "Weather"
+        tempConverter.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        navigationItem.rightBarButtonItem = tempConverter
+    }
+    
+    //MARK:- Selector
+    
+    @objc func changeTemp(button:UIButton) {
+        presenter?.isTempChanged = !(presenter?.isTempChanged ?? false )
+        weatherListTableView.reloadData()
+        }
+    
 }
 
 
+//MARK:- TableView Delegate Methods
 extension WeatherList: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -51,7 +67,7 @@ extension WeatherList: UITableViewDelegate {
         
     }
 }
-
+//MARK:- TableView DataSource  Methods
 extension WeatherList: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,17 +76,40 @@ extension WeatherList: UITableViewDataSource {
         
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let cell = tableView.dequeue() as WeatherItemCell
+        // cell configuration
         presenter?.configurationWeatherItemCell(cell: cell, index: indexPath.row)
+        
         return cell
+    }
+
+}
+
+extension WeatherList: WeatherListView {
+    func showIndecator() {
+        DispatchQueue.main.async { [weak self ] in
+            guard let self = self else {return}
+            self.showSpinner(onView: self.view)
+        }
+    }
+    
+    func hideIndecator() {
+        DispatchQueue.main.async { [weak self ] in
+            guard let self = self else {return}
+            self.removeSpinner()
+        }
+    }
+    
+    func changeItemBarTitle(title: String) {
+        tempConverter.title = title
     }
     
     
-    
     func show(message: String) {
-        
+        self.presentAlert(withTitle: "Error", message:message, actions: ["Ok" : UIAlertAction.Style.default])
     }
     
     func reloadTableView() {
@@ -78,6 +117,5 @@ extension WeatherList: UITableViewDataSource {
             self?.weatherListTableView.reloadData()
         }
     }
-    
     
 }

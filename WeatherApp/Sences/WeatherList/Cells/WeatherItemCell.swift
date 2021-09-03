@@ -18,6 +18,10 @@ class WeatherItemCell: UITableViewCell {
 }
 
 extension WeatherItemCell:  WeatherItemCellView {
+    func tempMode(mode: String) {
+        weatherTempLabel.text =  mode
+    }
+    
     
     func displayCellBody(list: weatherList) {
       
@@ -25,7 +29,7 @@ extension WeatherItemCell:  WeatherItemCellView {
         
         WeahterDateLabel.text = "\(list.dt.timeStampToDateConverter()?.suffix(16) ?? "")"
         
-        weatherTempLabel.text =  list.main?.temp.TemperatureConverter(from: .kelvin, to: .celsius)
+       
         
     }
     

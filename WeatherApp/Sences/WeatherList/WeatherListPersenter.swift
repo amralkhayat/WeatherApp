@@ -10,6 +10,9 @@ import Foundation
 protocol WeatherListView: AnyObject {
     func show(message: String)
     func reloadTableView()
+    func changeItemBarTitle(title: String)
+    func showIndecator ()
+    func hideIndecator ()
 }
 
 
@@ -18,22 +21,25 @@ protocol WeatherListPresenter {
     func numberOfCell() -> Int
     func viewDidLoad()
     func getWeahterList()
+    func changeTemp(temp:Double) -> String
+    var isTempChanged: Bool {get}
 }
+
 //MARK:-  protocol WeatherItemCellView Handling cell view
 protocol WeatherItemCellView {
     func displayCellBody(list: weatherList )
+    func tempMode(mode:String)
 }
 
 
 class WeatherListPresenterImplementation: WeatherListPresenter{
  
-
     //MARK:- Properities
      weak var view: WeatherListView?
     private var useCase : WeatherListUseCase
     private var router : WeatherListViewRouter
     private var weatherList: WeatherListModel?
-
+    var isTempChanged: Bool = false
     
     // MARK:- Init
     init(view: WeatherListView, useCase:  WeatherListUseCase, router: WeatherListViewRouter) {
@@ -52,7 +58,7 @@ class WeatherListPresenterImplementation: WeatherListPresenter{
     and then cashe it to the realm database and populate it to the tableView */
     
     func getWeahterList() {
-        
+        self.view?.showIndecator()
         useCase.getWeatherList { [weak self] (result) in
             guard let self = self else {return}
             
@@ -60,14 +66,29 @@ class WeatherListPresenterImplementation: WeatherListPresenter{
             
             case let .success(data):
                 
+                self.view?.hideIndecator()
+                
                 self.weatherList = data
-         
+           
                 self.view?.reloadTableView()
                 
             case let .failure(error):
                 
+                self.view?.hideIndecator()
+                
             self.view?.show(message: error.localizedDescription)
             }
+        }
+    }
+    
+ 
+    func changeTemp(temp:Double) -> String {
+        if isTempChanged{
+            self.view?.changeItemBarTitle(title: "Celsius")
+           return temp.TemperatureConverter(from: .kelvin, to: .fahrenheit)
+        }else {
+            self.view?.changeItemBarTitle(title: "Fahrenheit")
+            return temp.TemperatureConverter(from: .kelvin, to: .celsius)
         }
     }
     
@@ -79,7 +100,8 @@ class WeatherListPresenterImplementation: WeatherListPresenter{
     func configurationWeatherItemCell (cell:WeatherItemCellView , index: Int) {
         guard let list = self.weatherList?.list else {return}
         cell.displayCellBody(list: list[index])
-          
+        
+        cell.tempMode(mode: changeTemp(temp: list[index].main?.temp ?? 0.0))
       }
     
     
@@ -97,7 +119,7 @@ class WeatherListPresenterImplementation: WeatherListPresenter{
         let weatherDetails = WeatherDetailsModel(date: list.dt , city: data.city?.name ?? "",
                                                                  icon: weather.icon ?? "",
                                                                  main: weather.descr ?? "" ,
-                                                                 temp: main?.temp.TemperatureConverter(from: .kelvin, to: .celsius) ?? "")
+                                                                 temp: changeTemp(temp: main?.temp ?? 0.0 ))
         
         router.presentDetailsView(for: weatherDetails)
     }
