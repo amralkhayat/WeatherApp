@@ -7,6 +7,9 @@
 
 import UIKit
 extension WeatherList: WeatherListView {
+   
+    
+    
     func showIndecator() {
         DispatchQueue.main.async { [weak self ] in
             guard let self = self else {return}
@@ -34,6 +37,12 @@ extension WeatherList: WeatherListView {
         DispatchQueue.main.async { [weak self] in
             self?.weatherListTableView.reloadData()
         }
+    }
+    
+    
+    func randomDescriptiom(desc: String) {
+        body =  desc
+
     }
     
 }

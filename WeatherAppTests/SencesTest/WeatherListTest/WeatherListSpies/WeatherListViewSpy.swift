@@ -9,6 +9,10 @@ import Foundation
 @testable import WeatherApp
 class WeatherListViewSpy: WeatherListView {
     
+    
+   
+    
+    
     var isShowIndicator = false
     var isHideIndicator = false
     var isTableViewReload = false
@@ -34,5 +38,8 @@ class WeatherListViewSpy: WeatherListView {
         isHideIndicator = true
     }
     
+    func randomDescriptiom(desc: String) {
+        
+    }
     
 }

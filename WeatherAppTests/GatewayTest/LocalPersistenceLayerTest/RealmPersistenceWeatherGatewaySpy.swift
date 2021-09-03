@@ -13,7 +13,6 @@ class RealmPersistenceWeatherGatewaySpy: RealmMethodsProtocol{
   
     var addWeatherCompletionHandler:  Result<String?, RealmError>!
     var readWeather:  [Any]?
-    var removeWeatherCompletionHandler: Result<String?, RealmError>!
     
 
     func create<T>(_ objects: T, responseHandler: @escaping CallResponse<String>) where T : Object {
@@ -28,11 +27,7 @@ class RealmPersistenceWeatherGatewaySpy: RealmMethodsProtocol{
     }
     
     
-    
-    func delete<D>(_ object: D, responseHandler: @escaping CallResponse<String>) where D : Object {
-        
-        responseHandler(removeWeatherCompletionHandler)
-    }
+
     
     
    

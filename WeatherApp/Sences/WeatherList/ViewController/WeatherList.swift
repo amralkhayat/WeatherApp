@@ -28,13 +28,14 @@ class WeatherList: UIViewController {
     }
     //MARK:- Properties
     var tempConverter =  UIBarButtonItem()
-
+    var body = ""
     //MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
    
        
         configurationUI()
+
     
         }
     
@@ -42,36 +43,53 @@ class WeatherList: UIViewController {
     //MARK:- Helper
     private func configurationUI(){
         addNavigationItem()
+        
         WeatherListImplementation.configure(WeatherListViewController: self)
+        
         presenter?.viewDidLoad()
+        
         scheuleNotifications()
     }
     
     private func addNavigationItem(){
+        
         tempConverter =  UIBarButtonItem(title: "Fahrenheit", style: .plain, target: self, action: #selector(changeTemp(button:)))
 
         navigationItem.title = "Weather"
+        
         tempConverter.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        
         navigationItem.rightBarButtonItem = tempConverter
     }
     
     private func scheuleNotifications(){
+        
         let center = UNUserNotificationCenter.current()
-//        center.removeAllPendingNotificationRequests()
+        
+        center.removeAllPendingNotificationRequests()
+        
         //Notifcations Content data
+        
         let content = UNMutableNotificationContent()
+        
         content.title = "Weather App"
-        content.body = presenter?.generateRandomWeatherDescription() ?? ""
+        
+        content.body = body
+        
         content.categoryIdentifier = "alarm"
+        
         content.sound = .default
         
         // scheule Time to fire notifcations every 24 hours
         var dateComponents =  DateComponents()
-        dateComponents.hour = 12
-        dateComponents.month = 30
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents , repeats: true)
-//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
         
+        dateComponents.hour = 24
+        
+     
+
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents , repeats: true)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+    
         
         // create notifcation request , we add rondom id for each notifcation using  UUID()
         let request = UNNotificationRequest(identifier: UUID().uuidString, content:  content, trigger: trigger)

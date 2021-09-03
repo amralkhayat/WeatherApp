@@ -7,7 +7,7 @@
 
 import Foundation
 // This protocol in not necessarily needed since it doesn't include any extra methods
-// besides what BooksGateway already provides. However, if there would be any extra methods
+// besides what WeatherGateway already provides. However, if there would be any extra methods
 protocol APIWeatherGateway: WeatherGateway  {
     
 }

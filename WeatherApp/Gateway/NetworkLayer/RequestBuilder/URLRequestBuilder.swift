@@ -13,7 +13,7 @@ protocol UrlRequestBuilder : ApiRequest{
      var path: String { get }
     // MARK: - Parameters
     var parameters: [String: Any]? { get }
-   // MARK: - Main and Request URLS
+   // MARK: - Main 
    var mainURL: URL { get }
 
 }
@@ -25,11 +25,7 @@ extension UrlRequestBuilder {
     
       }
   
-  
 
-  
-    
-   
   var urlRequest: URLRequest {
     
     let stringUrl =  mainURL.appendingPathComponent(path).absoluteString.removingPercentEncoding!

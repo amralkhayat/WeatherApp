@@ -10,7 +10,6 @@ protocol LocalPersistenceMethods: WeatherGateway  {
     
     func addWeather (object: WeatherListModel, completionHandler: @escaping WeatherGatewayCompletionHandler<Any>)
       
-    func deleteWeather (object: WeatherListModel, completionHandler: @escaping WeatherGatewayCompletionHandler<String>)
 }
 
 
@@ -61,24 +60,5 @@ class LocalPersistenceWeatherGetway: LocalPersistenceMethods{
     
     }
     
-    
-   
-    // MARK: - Delete  Weather  from  realm data storage
-    func deleteWeather (object: WeatherListModel, completionHandler: @escaping WeatherGatewayCompletionHandler<String>) {
-        
-        realmMethods?.delete(object){ (result) in
-            switch result {
-            
-            case .success(let message ):
-                
-                completionHandler(.success(message ?? ""))
-                
-            case .failure(let error):
 
-                completionHandler(.failure(RealmError(error: error)))
-
-            }
-        }
-        
-    }
 }

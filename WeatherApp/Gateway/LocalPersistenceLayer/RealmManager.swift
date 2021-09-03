@@ -17,7 +17,6 @@ protocol RealmMethodsProtocol {
     
     func readObjects<R:Object>  (_ object: R.Type  ) -> [R]?
     
-    func delete <D:Object>( _ object:D,responseHandler: @escaping CallResponse<String>)
 
 }
 //MARK:- Realm Manager has all Methods Responable for CRUD
@@ -93,32 +92,5 @@ class RealmManager: RealmMethodsProtocol {
         return Array(result)
     }
     
-
-
-    
-  /*
-         delete Mehtod delete  object data   from relam
-          @object: object that data you want to delete
-         @responseHandler: return message if data is saved or through error
-          */
-    
-    func delete<D>(_ object: D, responseHandler: @escaping CallResponse<String>) where D : Object {
-        
-        do{
-            try realm.write{
-              
-                realm.delete(object)
-              
-                responseHandler(.success("Data successfully Deleted"))
-              
-            }
-          
-        }catch let error as NSError{
-          
-            responseHandler(.failure(RealmError(error: error)))
-        }
-    }
-    
-
-    
+  
 }

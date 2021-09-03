@@ -50,6 +50,7 @@
 		DD83C47926E1CCB200B49E1E /* WeatherListViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD83C47826E1CCB200B49E1E /* WeatherListViewSpy.swift */; };
 		DD83C47B26E1CCF900B49E1E /* WeatherListPersenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD83C47A26E1CCF900B49E1E /* WeatherListPersenterTest.swift */; };
 		DD83C47D26E1DE7F00B49E1E /* WeatherItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD83C47C26E1DE7F00B49E1E /* WeatherItemCellView.swift */; };
+		DD85E46526E2A8DA00A4EDB2 /* WeatherListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85E46426E2A8DA00A4EDB2 /* WeatherListViewControllerTest.swift */; };
 		DDDE9FF226DE86410018D59A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE9FF126DE86410018D59A /* AppDelegate.swift */; };
 		DDDE9FFB26DE86430018D59A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDDE9FFA26DE86430018D59A /* Assets.xcassets */; };
 		DDDE9FFE26DE86430018D59A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDE9FFC26DE86430018D59A /* LaunchScreen.storyboard */; };
@@ -120,6 +121,7 @@
 		DD83C47826E1CCB200B49E1E /* WeatherListViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewSpy.swift; sourceTree = "<group>"; };
 		DD83C47A26E1CCF900B49E1E /* WeatherListPersenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListPersenterTest.swift; sourceTree = "<group>"; };
 		DD83C47C26E1DE7F00B49E1E /* WeatherItemCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItemCellView.swift; sourceTree = "<group>"; };
+		DD85E46426E2A8DA00A4EDB2 /* WeatherListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewControllerTest.swift; sourceTree = "<group>"; };
 		DDDE9FEE26DE86410018D59A /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDDE9FF126DE86410018D59A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDDE9FFA26DE86430018D59A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 			children = (
 				DD83C47326E1CAB600B49E1E /* WeatherListSpies */,
 				DD83C47A26E1CCF900B49E1E /* WeatherListPersenterTest.swift */,
+				DD85E46426E2A8DA00A4EDB2 /* WeatherListViewControllerTest.swift */,
 			);
 			path = WeatherListTest;
 			sourceTree = "<group>";
@@ -461,8 +464,8 @@
 			isa = PBXGroup;
 			children = (
 				DDDEA02C26DE8BE00018D59A /* WeatherList.swift */,
-				DDDEA02D26DE8BE00018D59A /* WeatherList.xib */,
 				DD5E457D26E1B52E00FDBCB5 /* WeatherListDelegateMethods .swift */,
+				DDDEA02D26DE8BE00018D59A /* WeatherList.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -711,6 +714,7 @@
 				DD801ABD26E0A50C009B5DB0 /* WeatherListModelTest.swift in Sources */,
 				DD801AC326E0A71D009B5DB0 /* WeatherListModel.swift in Sources */,
 				DD801ACC26E0AD59009B5DB0 /* RealmPersistenceWeatherGatewaySpy.swift in Sources */,
+				DD85E46526E2A8DA00A4EDB2 /* WeatherListViewControllerTest.swift in Sources */,
 				DD801AD226E0B1B1009B5DB0 /* NetworkTestHelper.swift in Sources */,
 				DD83C47726E1CC5400B49E1E /* WeatherListUseCaseSpy.swift in Sources */,
 				DD83C47926E1CCB200B49E1E /* WeatherListViewSpy.swift in Sources */,
