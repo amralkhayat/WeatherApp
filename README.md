@@ -19,6 +19,8 @@ Weather app populate 16 weather situations with different time , and notify with
 
 * Realm
 
+* KingFisher
+
 ## MVP Concepts
 
 * View - delegates user interaction events to the Presenter and displays data passed by the Presenter.
