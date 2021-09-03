@@ -1,5 +1,5 @@
 # WeatherApp
-Weather app populate 16 weather situations with different time , and notify with random weather notifcation.
+Weather app populate 16 weather situations with different time , and notify with random weather notifcation, you can choose fahrenheit or celsius temperature format.
 
 ## Screenshots
 ![Group](https://user-images.githubusercontent.com/33759960/131956966-50fd5b10-1712-467f-a94f-4d2459de5d0a.png)
