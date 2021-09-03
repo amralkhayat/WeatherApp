@@ -31,12 +31,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
     
-    
+    //MARK:- Register  for local notifcations
     private func registerLocalNotifications(){
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert,.badge,.sound]) { granted, Error in
-            if (Error != nil)  {
-            
+            if (granted  ==  false)  {
+                DispatchQueue.main.async { [weak self ] in
+                    self?.window?.rootViewController?.presentAlert(withTitle: "Error",
+                                                                  message: "To be able to receive weather notifications you should enable notifications from setting.",
+                                                                  actions: ["Ok" : UIAlertAction.Style.default])
+                }
+               
             }
         }
     }

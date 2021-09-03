@@ -33,7 +33,7 @@ class CacheWeatherGetway: WeatherGateway  {
         }
     }
     
-    
+    //MARK:- Handling fetch api when data successfully  parsing save data to realm model if no internet connection or any error will load pervious copy of the data
     func handleFetchWeatherApiResult(_ result: Result<WeatherListModel, Error>, completionHandler: @escaping (Result<WeatherListModel,Error>) -> Void) {
         
         switch result {
@@ -50,6 +50,8 @@ class CacheWeatherGetway: WeatherGateway  {
         }
     
 
+    
+    
     private func handlingSuccessSavetoRelam(Weather: WeatherListModel,completionHandler: @escaping (Result<WeatherListModel,Error>) -> Void){
         localPersistenceWeatherGateway.addWeather(object: Weather) { result in
         
