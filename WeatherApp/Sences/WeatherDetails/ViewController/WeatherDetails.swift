@@ -7,11 +7,10 @@
 
 import UIKit
 
-class WeatherDetails: UIViewController,WeatherDetailsView {
+class WeatherDetails: UIViewController {
    
-    
-
     var presenter:  WeatherDetailsPresenterImplementation?
+    
     var configurator:  WeatherDetailsConfigurator?
     
     //MARK:- IBOUTLETS
@@ -38,17 +37,29 @@ class WeatherDetails: UIViewController,WeatherDetailsView {
 
    //MARK:- Helper
     private func configurationUI(){
+        
         configurator?.configure(WeatherDetailsViewController: self)
+        
         presenter?.viewDidLoad()
     }
     
+
+}
+
+//MARK:- WeatherDetails Delegates 
+extension WeatherDetails: WeatherDetailsView {
     
     func displayWeatherDetails(details: WeatherDetailsModel) {
+        
         weatherDateLabel.text = "\(details.date.timeStampToDateConverter() ?? "" )"
+        
         weatherCity.text = details.city
+        
         weatherDescription.text = details.main
+        
         weatherTempLabel.text = "\(details.temp)"
+        
         weatherImage.loadImage(imageName: details.icon)
     }
-
+    
 }

@@ -9,6 +9,7 @@ import Foundation
 
 //MARK:- WeatherDetailsConfigurator using for configuration of the view
 protocol WeatherDetailsConfigurator {
+    
    func configure(WeatherDetailsViewController: WeatherDetails)
 }
 
@@ -23,7 +24,6 @@ class  WeatherDetailsConfiguratorImplementation: WeatherDetailsConfigurator  {
     
     
      func configure(WeatherDetailsViewController: WeatherDetails) {
-        
         
         let persenter = WeatherDetailsPresenterImplementation(view: WeatherDetailsViewController, weatherDetails: weatherDetails)
         

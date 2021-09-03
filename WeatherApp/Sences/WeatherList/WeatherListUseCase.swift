@@ -8,7 +8,9 @@
 import Foundation
 
 typealias weatherLiskUseCaseCompletionHandler = ((Result<WeatherListModel, Error>) -> Void)
+
 protocol WeatherListUseCase {
+    
     func getWeatherList(completionHandler: @escaping weatherLiskUseCaseCompletionHandler)
 }
 

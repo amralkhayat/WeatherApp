@@ -39,7 +39,7 @@ class WeatherListPresenterImplementation: WeatherListPresenter{
      weak var view: WeatherListView?
     private var useCase : WeatherListUseCase
     private var router : WeatherListViewRouter
-    private var weatherList: WeatherListModel?
+     var weatherList: WeatherListModel?
     var isTempChanged: Bool = false
     
     // MARK:- Init
@@ -82,7 +82,7 @@ class WeatherListPresenterImplementation: WeatherListPresenter{
         }
     }
     
- 
+ /* method responsible for change temp from  Fahrenheit to Celsius vice versa  */
     func changeTemp(temp:Double) -> String {
         if isTempChanged{
             self.view?.changeItemBarTitle(title: "Celsius")
@@ -93,6 +93,7 @@ class WeatherListPresenterImplementation: WeatherListPresenter{
         }
     }
     
+    /* method responsible for generate reandom weather from weather list*/
     func generateRandomWeatherDescription() -> String? {
         let count = weatherList?.list.count ?? 0
         let weatherNumber = arc4random_uniform(UInt32(count))
@@ -113,7 +114,7 @@ class WeatherListPresenterImplementation: WeatherListPresenter{
         cell.tempMode(mode: changeTemp(temp: list[index].main?.temp ?? 0.0))
       }
     
-    
+    // when  select tableview cell will pass selected weather details 
     func didSelect(row: Int) {
    
         guard let data = self.weatherList else {return}
