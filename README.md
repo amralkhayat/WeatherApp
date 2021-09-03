@@ -32,3 +32,29 @@ Weather app populate 16 weather situations with different time , and notify with
 * Configurator -  Injects the dependency object graph into the scene (view controller).
 
 * UseCase  - business logic for a specific use case in application.
+
+## Files organization 
+
+* Resources: LaunchScreen + Assets.
+
+* Extension : Contains methods extend from apple current classes 
+
+* Core : Gateways + App delegate 
+
+* Configuration : Info.plist
+
+* Model: app models 
+
+* Gateway : Containes network layer + LocalPersistenceLayer + cashe
+
+* Sences : Contains viewControllers of the application 
+
+
+
+
+
+
+
+
+
+
