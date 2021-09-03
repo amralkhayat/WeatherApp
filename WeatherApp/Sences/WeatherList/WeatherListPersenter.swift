@@ -23,6 +23,7 @@ protocol WeatherListPresenter {
     func getWeahterList()
     func changeTemp(temp:Double) -> String
     var isTempChanged: Bool {get}
+   func generateRandomWeatherDescription() -> String?
 }
 
 //MARK:-  protocol WeatherItemCellView Handling cell view
@@ -33,7 +34,7 @@ protocol WeatherItemCellView {
 
 
 class WeatherListPresenterImplementation: WeatherListPresenter{
- 
+
     //MARK:- Properities
      weak var view: WeatherListView?
     private var useCase : WeatherListUseCase
@@ -91,6 +92,14 @@ class WeatherListPresenterImplementation: WeatherListPresenter{
             return temp.TemperatureConverter(from: .kelvin, to: .celsius)
         }
     }
+    
+    func generateRandomWeatherDescription() -> String? {
+        let count = weatherList?.list.count ?? 0
+        let weatherNumber = arc4random_uniform(UInt32(count))
+        
+       return weatherList?.list[Int(weatherNumber)].description
+    }
+    
     
     //MARK:- TableView properties 
     func numberOfCell() -> Int {

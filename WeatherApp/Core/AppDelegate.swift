@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import UserNotifications
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         mainScreenView()
+        registerLocalNotifications()
         return true
     }
 
@@ -28,6 +29,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rootView.navigationBar.tintColor = .white
         window?.rootViewController =  rootView
         window?.makeKeyAndVisible()
+    }
+    
+    
+    private func registerLocalNotifications(){
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert,.badge,.sound]) { granted, Error in
+            if (Error != nil)  {
+            
+            }
+        }
     }
 
 }

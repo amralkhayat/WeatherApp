@@ -17,6 +17,7 @@
 		DD5E457826E174BC00FDBCB5 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5E457726E174BC00FDBCB5 /* UIImageView+Extension.swift */; };
 		DD5E457A26E1963C00FDBCB5 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5E457926E1963C00FDBCB5 /* Double+Extension.swift */; };
 		DD5E457C26E1AC8E00FDBCB5 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5E457B26E1AC8E00FDBCB5 /* UIViewController+Extension.swift */; };
+		DD5E457E26E1B52E00FDBCB5 /* WeatherListDelegateMethods .swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5E457D26E1B52E00FDBCB5 /* WeatherListDelegateMethods .swift */; };
 		DD801AA926E01E4A009B5DB0 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AA826E01E4A009B5DB0 /* RealmManager.swift */; };
 		DD801AAB26E01E6D009B5DB0 /* RealmError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AAA26E01E6D009B5DB0 /* RealmError.swift */; };
 		DD801AAF26E01EFD009B5DB0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD801AAE26E01EFD009B5DB0 /* APIManager.swift */; };
@@ -83,6 +84,7 @@
 		DD5E457726E174BC00FDBCB5 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		DD5E457926E1963C00FDBCB5 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		DD5E457B26E1AC8E00FDBCB5 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		DD5E457D26E1B52E00FDBCB5 /* WeatherListDelegateMethods .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherListDelegateMethods .swift"; sourceTree = "<group>"; };
 		DD801AA826E01E4A009B5DB0 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		DD801AAA26E01E6D009B5DB0 /* RealmError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmError.swift; sourceTree = "<group>"; };
 		DD801AAE26E01EFD009B5DB0 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 			children = (
 				DDDEA02C26DE8BE00018D59A /* WeatherList.swift */,
 				DDDEA02D26DE8BE00018D59A /* WeatherList.xib */,
+				DD5E457D26E1B52E00FDBCB5 /* WeatherListDelegateMethods .swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				DD801AB526E01F73009B5DB0 /* URLRequestBuilder.swift in Sources */,
 				DDDEA03C26DE8D3C0018D59A /* UIView+Extension.swift in Sources */,
 				DD801AA926E01E4A009B5DB0 /* RealmManager.swift in Sources */,
+				DD5E457E26E1B52E00FDBCB5 /* WeatherListDelegateMethods .swift in Sources */,
 				DD5E457A26E1963C00FDBCB5 /* Double+Extension.swift in Sources */,
 				DD801AB326E01F4D009B5DB0 /* NetworkConstant.swift in Sources */,
 				DD5A789F26E1338100D40089 /* Int+Extension.swift in Sources */,

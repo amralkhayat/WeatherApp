@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import UserNotifications
 class WeatherList: UIViewController {
 
     var presenter:  WeatherListPresenterImplementation?
@@ -28,25 +28,55 @@ class WeatherList: UIViewController {
     }
     //MARK:- Properties
     var tempConverter =  UIBarButtonItem()
+
     //MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
    
-        addNavigationItem()
- 
-        WeatherListImplementation.configure(WeatherListViewController: self)
-        presenter?.viewDidLoad()
-        
+       
+        configurationUI()
+    
         }
     
     
     //MARK:- Helper
+    private func configurationUI(){
+        addNavigationItem()
+        WeatherListImplementation.configure(WeatherListViewController: self)
+        presenter?.viewDidLoad()
+        scheuleNotifications()
+    }
+    
     private func addNavigationItem(){
         tempConverter =  UIBarButtonItem(title: "Fahrenheit", style: .plain, target: self, action: #selector(changeTemp(button:)))
 
         navigationItem.title = "Weather"
         tempConverter.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         navigationItem.rightBarButtonItem = tempConverter
+    }
+    
+    private func scheuleNotifications(){
+        let center = UNUserNotificationCenter.current()
+//        center.removeAllPendingNotificationRequests()
+        //Notifcations Content data
+        let content = UNMutableNotificationContent()
+        content.title = "Weather App"
+        content.body = presenter?.generateRandomWeatherDescription() ?? ""
+        content.categoryIdentifier = "alarm"
+        content.sound = .default
+        
+        // scheule Time to fire notifcations every 24 hours
+        var dateComponents =  DateComponents()
+        dateComponents.hour = 12
+        dateComponents.month = 30
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents , repeats: true)
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        
+        
+        // create notifcation request , we add rondom id for each notifcation using  UUID()
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content:  content, trigger: trigger)
+        
+        center.add(request)
     }
     
     //MARK:- Selector
@@ -85,37 +115,8 @@ extension WeatherList: UITableViewDataSource {
         
         return cell
     }
+    
+    
 
 }
 
-extension WeatherList: WeatherListView {
-    func showIndecator() {
-        DispatchQueue.main.async { [weak self ] in
-            guard let self = self else {return}
-            self.showSpinner(onView: self.view)
-        }
-    }
-    
-    func hideIndecator() {
-        DispatchQueue.main.async { [weak self ] in
-            guard let self = self else {return}
-            self.removeSpinner()
-        }
-    }
-    
-    func changeItemBarTitle(title: String) {
-        tempConverter.title = title
-    }
-    
-    
-    func show(message: String) {
-        self.presentAlert(withTitle: "Error", message:message, actions: ["Ok" : UIAlertAction.Style.default])
-    }
-    
-    func reloadTableView() {
-        DispatchQueue.main.async { [weak self] in
-            self?.weatherListTableView.reloadData()
-        }
-    }
-    
-}
