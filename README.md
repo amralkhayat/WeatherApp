@@ -49,7 +49,9 @@ Weather app populate 16 weather situations with different time , and notify with
 
 * Sences : Contains viewControllers of the application 
 
+## Dependencies
 
+Minimum required target IOS 14.5
 
 
 
