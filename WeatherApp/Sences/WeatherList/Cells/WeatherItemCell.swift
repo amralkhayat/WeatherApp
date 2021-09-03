@@ -23,9 +23,9 @@ extension WeatherItemCell:  WeatherItemCellView {
       
         weatherDayLabe.text = "\(list.dt.timeStampToDateConverter()?.prefix(8) ?? "")"
         
-        WeahterDateLabel.text = "\(list.dt.timeStampToDateConverter()?.suffix(9) ?? "")"
+        WeahterDateLabel.text = "\(list.dt.timeStampToDateConverter()?.suffix(16) ?? "")"
         
-        weatherTempLabel.text =  "\( list.main?.temp ?? 0.0)"
+        weatherTempLabel.text =  list.main?.temp.TemperatureConverter(from: .kelvin, to: .celsius)
         
     }
     

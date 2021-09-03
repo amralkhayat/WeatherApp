@@ -15,7 +15,7 @@ extension WeatherListModel {
 
         let city = City(id: 360630, name: "Cairo")
         
-        let main = Main(temp: 300.57, feelsLike:  301.87, tempMin: 299.79, tempMax: 300.57, humidity: 61)
+        let main = MainTemp(temp: 300.57)
         
         let weather = Weather(id:  800, main: "Clear", descr: "clear sky", icon: "01n")
         
@@ -36,3 +36,4 @@ extension WeatherListModel {
     
     
 }
+

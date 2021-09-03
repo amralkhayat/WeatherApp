@@ -29,7 +29,7 @@ class ApiWeatherGatewayImplementation: APIWeatherGateway {
 
             switch result {
             case let .success(weather):
-                print(weather)
+            
                 completionHandler(.success(weather))
             case let .failure(error):
                 completionHandler(.failure(error))

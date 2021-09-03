@@ -61,7 +61,7 @@ class WeatherListPresenterImplementation: WeatherListPresenter{
             case let .success(data):
                 
                 self.weatherList = data
-                
+         
                 self.view?.reloadTableView()
                 
             case let .failure(error):
@@ -84,21 +84,24 @@ class WeatherListPresenterImplementation: WeatherListPresenter{
     
     
     func didSelect(row: Int) {
-     
+   
         guard let data = self.weatherList else {return}
         
         let list = data.list[row]
         
         let weather = list.weather[0]
         
-         let main = list.main
-        
+        let main = list.main
+       
+       
         let weatherDetails = WeatherDetailsModel(date: list.dt , city: data.city?.name ?? "",
-                                                 icon: weather.icon ?? "", main: weather.descr ?? "" , temp: main?.temp ?? 0.0
-                                                 ,maxTemp: main?.tempMax ?? 0.0, minTemp: main?.tempMin ?? 0.0)
+                                                                 icon: weather.icon ?? "",
+                                                                 main: weather.descr ?? "" ,
+                                                                 temp: main?.temp.TemperatureConverter(from: .kelvin, to: .celsius) ?? "")
         
         router.presentDetailsView(for: weatherDetails)
     }
     
     
 }
+

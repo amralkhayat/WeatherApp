@@ -30,6 +30,10 @@ import RealmSwift
     }
     
 
+    private enum CodingKeys: String, CodingKey {
+         case list
+         case city
+      }
     
     override static func primaryKey() -> String? {
         return "id"
@@ -61,14 +65,17 @@ import RealmSwift
     override static func primaryKey() -> String? {
         return "id"
     }
-    
+    private enum CodingKeys: String, CodingKey {
+         case id
+         case name
+      }
     
 }
 
 //MARK:- WeatherList
 @objcMembers class weatherList: Object , Codable{
     dynamic var dt = 0
-    dynamic var main: Main?
+    dynamic var  main: MainTemp?
     dynamic var weather =  List<Weather>()
     
     
@@ -76,7 +83,7 @@ import RealmSwift
         return "dt"
     }
     
-    convenience  init(dt: Int,main: Main ,weather: List<Weather> ) {
+    convenience  init(dt: Int,main: MainTemp ,weather: List<Weather> ) {
         self.init()
         self.dt = dt
         self.main = main
@@ -88,34 +95,28 @@ import RealmSwift
         self.init()
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.dt = try container.decode(Int.self, forKey: .dt)
-        self.main = try? container.decode(Main.self, forKey: .main)
+        self.main = try? container.decode(MainTemp.self, forKey: .main)
         let weathers = try container.decodeIfPresent([Weather].self, forKey: .weather) ?? [Weather()]
         self.weather.append(objectsIn: weathers)
     }
+    
+    private enum CodingKeys: String, CodingKey {
+         case dt
+         case main
+         case weather
+      }
 
 }
 
 
-class Main: Object, Codable {
-    @objc dynamic var temp: Double = 0.0
-    @objc  dynamic var feelsLike: Double = 0.0
-    @objc  dynamic var tempMin: Double = 0.0
-    @objc  dynamic var tempMax: Double = 0.0
-    @objc  dynamic var humidity : Int = 0
-    @objc  dynamic var id = ""
+@objcMembers class MainTemp: Object, Codable {
+    dynamic var temp: Double = 0.0
 
-    override static func primaryKey() -> String? {
-        return "id"
-    }
-    
-    convenience  init(temp: Double,feelsLike: Double ,tempMin: Double,
-                      tempMax: Double, humidity : Int) {
+    convenience  init(temp: Double) {
         self.init()
         self.temp = temp
-        self.feelsLike = feelsLike
-        self.tempMin = tempMin
-        self.tempMax =  tempMax
-        self.humidity  = humidity
+
+       
     }
     
     
@@ -123,13 +124,16 @@ class Main: Object, Codable {
         self.init()
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.temp = try container.decode(Double.self, forKey: .temp)
-        self.feelsLike = try container.decode(Double.self, forKey: .feelsLike)
-        self.tempMin = try container.decode(Double.self, forKey: .tempMin)
-        self.tempMax  = try container.decode(Double.self, forKey: .tempMax )
-        self.humidity = try container.decode(Int.self, forKey: .humidity)
+
 
     }
     
+    private enum CodingKeys: String, CodingKey {
+         case temp
+
+      }
+  
+ 
     
 }
 
@@ -137,13 +141,11 @@ class Main: Object, Codable {
 //MARK:- Weather
 @objcMembers class Weather: Object, Codable{
     dynamic var id: Int = 0
-    dynamic var main: String?
     dynamic var descr: String?
     dynamic var icon: String?
     
     private enum CodingKeys: String, CodingKey {
          case id
-         case main
          case descr = "description"
          case icon
       }
@@ -156,7 +158,6 @@ class Main: Object, Codable {
                       icon: String) {
         self.init()
         self.id = id
-        self.main = main
         self.descr = descr
         self.icon =  icon
     }
@@ -167,8 +168,11 @@ class Main: Object, Codable {
         self.id = try container.decode(Int.self, forKey: .id)
         self.descr = try? container.decode(String.self, forKey: .descr)
         self.icon = try? container.decode(String.self, forKey: .icon)
-        self.main = try? container.decode(String.self, forKey: .main)
+
     }
+    
+    
+  
 }
 
 

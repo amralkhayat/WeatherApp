@@ -12,7 +12,7 @@ class IntExtension: XCTestCase {
     
     func test_timeStampToDateConverter() {
        //Given
-        let expectedDate = "Thursday, 2 Sep 2021 "
+        let expectedDate = "Thursday, 2 Sep 2021 20:00"
         //Then
         let data = 1630605600.timeStampToDateConverter()
        // When

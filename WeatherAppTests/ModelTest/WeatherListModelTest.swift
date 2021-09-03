@@ -28,7 +28,8 @@ class WeatherListModelTest: XCTestCase {
         
         // Then
     
-        XCTAssertEqual(sut?.city?.name, WeatherListModel.createWeatherList().city?.name)
+        XCTAssertEqual(sut?.list[0].main?.temp, WeatherListModel.createWeatherList().list[0].main?.temp)
         XCTAssertEqual(sut?.city?.id, expectedData.city?.id)
     }
 }
+   

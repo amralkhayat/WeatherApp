@@ -13,7 +13,7 @@ extension Int{
         let date = Date(timeIntervalSince1970: TimeInterval(self)) //convert unix timestamp to Date
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateFormat = "EEEE, d MMM yyyy "
+        dateFormatter.dateFormat = "EEEE, d MMM yyyy HH:mm"
      
         
         return dateFormatter.string(from: date)

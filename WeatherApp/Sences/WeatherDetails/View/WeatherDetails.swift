@@ -48,6 +48,7 @@ class WeatherDetails: UIViewController,WeatherDetailsView {
         weatherCity.text = details.city
         weatherDescription.text = details.main
         weatherTempLabel.text = "\(details.temp)"
+        weatherImage.loadImage(imageName: details.icon)
     }
 
 }

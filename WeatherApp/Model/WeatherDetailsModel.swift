@@ -13,7 +13,6 @@ struct WeatherDetailsModel {
     var city: String
     var icon: String
     var main: String
-    var temp: Double
-    var maxTemp: Double
-    var minTemp: Double
+    var temp: String
+  
 }
